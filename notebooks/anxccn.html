@@ -425,7 +425,9 @@
                     
   <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">act</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Aerosol particle size distribution and CCN analysis</span>
+
+<span class="kn">import</span> <span class="nn">act</span>
 <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">netCDF4</span> <span class="k">as</span> <span class="nn">nc</span>
@@ -465,9 +467,6 @@ If you use these data to prepare a publication, please cite:
 Kulkarni, G., Levin, M., &amp; Shilling, J. CCN Counter derived hygroscopicity
 parameter kappa (AOSCCNSMPSKAPPA). Atmospheric Radiation Measurement (ARM) User
 Facility. https://doi.org/10.5439/1729907
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ERROR 1: PROJ: proj_create_from_database: Open of /opt/conda/share/proj failed
 </pre></div>
 </div>
 </div>
@@ -522,7 +521,7 @@ Facility. https://doi.org/10.5439/1729907
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f2a1e31e7d0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f2a1c16c710&gt;]
 </pre></div>
 </div>
 <img alt="../_images/77b4a9518aeefdc25e8b0a2b054ab4760902b4d7636e449611c5557bb22538ec.png" src="../_images/77b4a9518aeefdc25e8b0a2b054ab4760902b4d7636e449611c5557bb22538ec.png" />
@@ -2458,7 +2457,7 @@ anxaossmpsM1.b1 : 1.2 : 20200308.000000-20200310.000000</dd><dt><span>site_id :<
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">index_1</span> <span class="o">=</span> <span class="p">((</span><span class="n">ds_filtered</span><span class="p">[</span><span class="s1">&#39;supersaturation_calculated&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> 
-           <span class="p">(</span><span class="n">ds_filtered</span><span class="p">[</span><span class="s1">&#39;supersaturation_calculated&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mf">0.1</span><span class="p">))</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
+           <span class="p">(</span><span class="n">ds_filtered</span><span class="p">[</span><span class="s1">&#39;supersaturation_calculated&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mf">0.2</span><span class="p">))</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
 
 <span class="n">index_2</span> <span class="o">=</span> <span class="p">((</span><span class="n">ds_filtered</span><span class="p">[</span><span class="s1">&#39;supersaturation_calculated&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">0.6</span><span class="p">)</span> <span class="o">&amp;</span> 
            <span class="p">(</span><span class="n">ds_filtered</span><span class="p">[</span><span class="s1">&#39;supersaturation_calculated&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
@@ -2523,7 +2522,7 @@ anxaossmpsM1.b1 : 1.2 : 20200308.000000-20200310.000000</dd><dt><span>site_id :<
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/40d12a49b93c68077474c115ede566ab989aae8b03fd6f88ce138d624610eadc.png" src="../_images/40d12a49b93c68077474c115ede566ab989aae8b03fd6f88ce138d624610eadc.png" />
+<img alt="../_images/888dccbe0d6a6b19dd55caf7d03689999932b75a5634d577a5921615f950a8b8.png" src="../_images/888dccbe0d6a6b19dd55caf7d03689999932b75a5634d577a5921615f950a8b8.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2553,7 +2552,7 @@ anxaossmpsM1.b1 : 1.2 : 20200308.000000-20200310.000000</dd><dt><span>site_id :<
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/24d6f36a05b39e8c4141c331e2b41ef3ca93513c00c2a249d0fcf765dfdc3b54.png" src="../_images/24d6f36a05b39e8c4141c331e2b41ef3ca93513c00c2a249d0fcf765dfdc3b54.png" />
+<img alt="../_images/faab607eeac6c109ce2ebc6b19726aaf468266ad4be9a62b52d462f92965cac0.png" src="../_images/faab607eeac6c109ce2ebc6b19726aaf468266ad4be9a62b52d462f92965cac0.png" />
 </div>
 </div>
 <div class="cell docutils container">
