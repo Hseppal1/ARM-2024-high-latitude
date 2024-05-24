@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>&lt;no title&gt; &#8212; Project Pythia Cookbook Template</title>
+    <title>Aerosol particle size distribution and CCN analysis &#8212; Project Pythia Cookbook Template</title>
   
   
   
@@ -218,10 +218,6 @@
   
 
   
-    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
-      <span class="fa-solid fa-outdent"></span>
-    </label>
-  
 </div>
 
     </header>
@@ -381,9 +377,14 @@
 <li class="toctree-l1"><a class="reference internal" href="notebooks/wind-rose.html">ANX site</a></li>
 
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Aerosol Conditions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="notebooks/oyelistic_armplots.html">oywlitic</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Fluxes</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="notebooks/main_flux.html">ANX site ECOR data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Hseppal1/ARM-2024-high-latitude/blob/main/notebooks/weak_strong_latent_heat.html">https://github.com/Hseppal1/ARM-2024-high-latitude/blob/main/notebooks/weak_strong_latent_heat.html</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Models</span></p>
 <ul class="nav bd-sidenav">
@@ -418,7 +419,9 @@
 <div id="searchbox"></div>
                   <article class="bd-article">
                     
-  <div class="cell docutils container">
+  <section class="tex2jax_ignore mathjax_ignore" id="aerosol-particle-size-distribution-and-ccn-analysis">
+<h1>Aerosol particle size distribution and CCN analysis<a class="headerlink" href="#aerosol-particle-size-distribution-and-ccn-analysis" title="Link to this heading"><i class="fas fa-link"></i></a></h1>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">act</span>
 <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
@@ -460,9 +463,6 @@ If you use these data to prepare a publication, please cite:
 Kulkarni, G., Levin, M., &amp; Shilling, J. CCN Counter derived hygroscopicity
 parameter kappa (AOSCCNSMPSKAPPA). Atmospheric Radiation Measurement (ARM) User
 Facility. https://doi.org/10.5439/1729907
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ERROR 1: PROJ: proj_create_from_database: Open of /opt/conda/share/proj failed
 </pre></div>
 </div>
 </div>
@@ -517,7 +517,7 @@ Facility. https://doi.org/10.5439/1729907
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f2a1e31e7d0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f2a1c16c710&gt;]
 </pre></div>
 </div>
 <img alt="_images/77b4a9518aeefdc25e8b0a2b054ab4760902b4d7636e449611c5557bb22538ec.png" src="_images/77b4a9518aeefdc25e8b0a2b054ab4760902b4d7636e449611c5557bb22538ec.png" />
@@ -2453,7 +2453,7 @@ anxaossmpsM1.b1 : 1.2 : 20200308.000000-20200310.000000</dd><dt><span>site_id :<
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">index_1</span> <span class="o">=</span> <span class="p">((</span><span class="n">ds_filtered</span><span class="p">[</span><span class="s1">&#39;supersaturation_calculated&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> 
-           <span class="p">(</span><span class="n">ds_filtered</span><span class="p">[</span><span class="s1">&#39;supersaturation_calculated&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mf">0.1</span><span class="p">))</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
+           <span class="p">(</span><span class="n">ds_filtered</span><span class="p">[</span><span class="s1">&#39;supersaturation_calculated&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mf">0.2</span><span class="p">))</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
 
 <span class="n">index_2</span> <span class="o">=</span> <span class="p">((</span><span class="n">ds_filtered</span><span class="p">[</span><span class="s1">&#39;supersaturation_calculated&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">0.6</span><span class="p">)</span> <span class="o">&amp;</span> 
            <span class="p">(</span><span class="n">ds_filtered</span><span class="p">[</span><span class="s1">&#39;supersaturation_calculated&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
@@ -2518,7 +2518,7 @@ anxaossmpsM1.b1 : 1.2 : 20200308.000000-20200310.000000</dd><dt><span>site_id :<
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/40d12a49b93c68077474c115ede566ab989aae8b03fd6f88ce138d624610eadc.png" src="_images/40d12a49b93c68077474c115ede566ab989aae8b03fd6f88ce138d624610eadc.png" />
+<img alt="_images/888dccbe0d6a6b19dd55caf7d03689999932b75a5634d577a5921615f950a8b8.png" src="_images/888dccbe0d6a6b19dd55caf7d03689999932b75a5634d577a5921615f950a8b8.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2548,7 +2548,7 @@ anxaossmpsM1.b1 : 1.2 : 20200308.000000-20200310.000000</dd><dt><span>site_id :<
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/24d6f36a05b39e8c4141c331e2b41ef3ca93513c00c2a249d0fcf765dfdc3b54.png" src="_images/24d6f36a05b39e8c4141c331e2b41ef3ca93513c00c2a249d0fcf765dfdc3b54.png" />
+<img alt="_images/faab607eeac6c109ce2ebc6b19726aaf468266ad4be9a62b52d462f92965cac0.png" src="_images/faab607eeac6c109ce2ebc6b19726aaf468266ad4be9a62b52d462f92965cac0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3423,6 +3423,7 @@ nsaaosnephdryX1.a1 : 1.1 : 20161101.000000</dd><dt><span>configuration_file :</s
 <img alt="_images/bb0640796be6299be2eac4eff95d496daedbbeb5329b77233a54f1bfef8e94ad.png" src="_images/bb0640796be6299be2eac4eff95d496daedbbeb5329b77233a54f1bfef8e94ad.png" />
 </div>
 </div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -3462,20 +3463,7 @@ nsaaosnephdryX1.a1 : 1.1 : 20161101.000000</dd><dt><span>configuration_file :</s
               
               
                 
-                  <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> On this page
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-  </nav></div>
-
-</div></div>
+                  <div class="bd-sidebar-secondary bd-toc"></div>
                 
               
 
@@ -3677,9 +3665,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
